@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+/*Import google font*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,900");
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  width: 100%;
+
+  /* CSS grid styles */
+  display: grid;
+  /* Define Auto Row Size */
+  grid-auto-rows: 20px;
+  /* Define our columns */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+}
+
+article {
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  padding: 20px;
+  color: #000080;
+}
+
+article:nth-child(odd) {
+  /*light blue*/
+  background-color: #89cff0;
+}
+
+article:nth-child(even) {
+  /*darker gray*/
+  background-color: #5dadec;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  padding: 20px;
+  color: #000080;
+}
+
+.question {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 1em;
+  color: navy;
+}
+
+.option {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  font-size: 0.8em;
+  padding: 1em;
+  color: navy;
+}
+
+.navigation {
+  /* flexbox styles */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+
+  list-style: none;
+  margin: 0;
+  background: deepskyblue;
+}
+
+/*Uses the opens sans for navigation*/
+.navigation a {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: navy;
+}
+
+.navigation a:hover {
+  background: #1565c0;
+}
+
+/* media query styles are only applied if the conditions are met */
+@media all and (max-width: 800px) {
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+
+  .navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
