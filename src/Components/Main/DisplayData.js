@@ -5,18 +5,20 @@ import DataList from "./DataList.js";
 const DisplayData = () => {
   return (
     <div>
+      {DataList.events.length > 0 && (
         <ul>
-          {DataList.events.map((game) => (
+          {DataList.events.map((event) => (
             <div>
               <span>
                 {/* Using getter for event Object to display name */}
-                <li key={game.id}>{game.get("name")}</li>{" "}
+                <li key={event.objectId}>{event.get("name")}</li>{" "}
               </span>
             </div>
           ))}
         </ul>
+      )}
     </div>
-  );
+  )
 };
 
 export default DisplayData;
