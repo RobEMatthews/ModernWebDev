@@ -1,6 +1,6 @@
 import React from "react";
 
-/* Favorites MODULE WITH STATEFUL PARENT AND STATELESS CHILD */
+/* Favorites MODULE */
 const FavoritesModule = () => {
   return (
     <div>

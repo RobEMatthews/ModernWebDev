@@ -1,4 +1,5 @@
 import React from "react";
+import DataList from "./DataList.js";
 
 /* MAIN MODULE WITH STATEFUL PARENT AND STATELESS CHILD */
 const MainModule = () => {
@@ -20,7 +21,7 @@ const MainModule = () => {
       type="text"
       placeholder="Enter Email"
       name="email"
-      id="email"
+      id="email_reg"
       required
     />
 
@@ -29,7 +30,7 @@ const MainModule = () => {
       type="password"
       placeholder="Enter Password"
       name="psw"
-      id="psw"
+      id="psw_reg"
       required
     />
 
@@ -52,7 +53,7 @@ const MainModule = () => {
     <hr />
     <p class="option">
       By creating an account you agree to our
-      <a href="#">Terms & Privacy</a>.
+      <a href="#">Terms and Privacy</a>.
     </p>
 
     <button type="submit" class="option">Register</button>
@@ -75,7 +76,7 @@ const MainModule = () => {
       type="text"
       placeholder="Enter Email"
       name="email"
-      id="email"
+      id="email_log"
       required
     />
 
@@ -84,19 +85,21 @@ const MainModule = () => {
       type="password"
       placeholder="Enter Password"
       name="psw"
-      id="psw"
+      id="psw_log"
       required
     />
 
     <hr />
     <p class="option">
       By creating an account you agree to our
-      <a href="#">Terms & Privacy</a>.
+      <a href="#">Terms and Privacy</a>.
     </p>
 
     <button type="submit" class="option">Register</button>
   </div>
-
+  <div>
+    <DataList />
+  </div>
 
 </form>
     </div>

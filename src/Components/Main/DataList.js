@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 import {
   getAllEvents
-} from "/src/Common/Services/event.services.js";
+} from "src/Common/Services/event.services.js";
 import {
   getUserById
-} from "/src/Common/Services/user.service.js";
+} from "src/Common/Services/user.service.js";
 
 const DataList = () => {
   // Variables in the state to hold data
