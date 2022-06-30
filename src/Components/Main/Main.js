@@ -1,7 +1,7 @@
 import React from "react";
-import DataList from "./DataList.js";
+import DisplayData from "./DisplayData.js";
 
-/* MAIN MODULE WITH STATEFUL PARENT AND STATELESS CHILD */
+/* MAIN MODULE */
 const MainModule = () => {
   return (
     <div>
@@ -52,8 +52,7 @@ const MainModule = () => {
     />
     <hr />
     <p class="option">
-      By creating an account you agree to our
-      <a href="#">Terms and Privacy</a>.
+      By creating an account you agree to our Terms and Privacy.
     </p>
 
     <button type="submit" class="option">Register</button>
@@ -91,14 +90,13 @@ const MainModule = () => {
 
     <hr />
     <p class="option">
-      By creating an account you agree to our
-      <a href="#">Terms and Privacy</a>.
+      By creating an account you agree to our Terms and Privacy
     </p>
 
     <button type="submit" class="option">Register</button>
   </div>
   <div>
-    <DataList />
+    <DisplayData />
   </div>
 
 </form>

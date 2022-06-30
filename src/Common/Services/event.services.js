@@ -3,9 +3,8 @@ import Parse from "parse";
 export function getAllEvents() {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
-  console.log("query",query)
   return query.find().then((results) => {
-    // returns array of Lesson objects
+    // returns array of Event objects
     return results;
   });
 }
