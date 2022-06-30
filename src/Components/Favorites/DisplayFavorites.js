@@ -1,16 +1,17 @@
 import React from "react";
-import DataList from "./DataList.js";
+import DataList from "../Main/DataList.js";
+
 
 /* CHILD STATELESS COMPONENT */
-const DisplayData = () => {
+const DisplayFavorites = () => {
   return (
     <div>
         <ul>
-          {DataList.events.map((game) => (
+          {DataList.users.map((user) => (
             <div>
               <span>
                 {/* Using getter for event Object to display name */}
-                <li key={game.id}>{game.get("name")}</li>{" "}
+                <li key={user.id}>{user.get("username")}</li>{" "}
               </span>
             </div>
           ))}
@@ -19,4 +20,4 @@ const DisplayData = () => {
   );
 };
 
-export default DisplayData;
+export default DisplayFavorites;

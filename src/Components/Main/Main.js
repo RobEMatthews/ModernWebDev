@@ -1,5 +1,6 @@
 import React from "react";
 import DisplayData from "./DisplayData.js";
+import DisplayFavorites from "../Favorites/DisplayFavorites.js";
 
 /* MAIN PARENT COMPONENT */
 const MainModule = () => {
@@ -97,6 +98,9 @@ const MainModule = () => {
   </div>
   <div>
     <DisplayData />
+  </div>
+  <div>
+    <DisplayFavorites />
   </div>
 
 </form>
