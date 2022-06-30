@@ -1,14 +1,12 @@
 import React from "react";
 import DataList from "./DataList.js";
 
-console.log("Data", DataList.event)
-
+/* CHILD STATELESS COMPONENT */
 const DataDisplay = ({onChange, onClick }) => {
   return (
     <div>
-      {DataList.event.length > 0 && (
         <ul>
-          {DataList.event.map((game) => (
+          {DataList.events.map((game) => (
             <div>
               <span>
                 {/* Using getter for event Object to display name */}
@@ -17,7 +15,6 @@ const DataDisplay = ({onChange, onClick }) => {
             </div>
           ))}
         </ul>
-      )}
     </div>
   );
 };

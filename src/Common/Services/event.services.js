@@ -1,15 +1,15 @@
 import Parse from "parse";
 
-export function getAllEvents() {
+export const getAllEvents = () => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
   return query.find().then((results) => {
     // returns array of Event objects
     return results;
   });
-}
+};
 
-export function getEventbyUser(userObject) {
+export const getEventbyUser = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
   query.equalTo("user",userObject)
@@ -17,4 +17,4 @@ export function getEventbyUser(userObject) {
     // returns array of user objects
     return results;
   });
-}
+};

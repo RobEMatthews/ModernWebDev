@@ -1,16 +1,13 @@
-// Pull in Data
-import React, { useEffect, useState } from "react";
-import {
-  getAllEvents
-} from "../../Common/Services/event.services.js";
-import {
-  getUserById
-} from "../../Common/Services/user.service.js";
+import { useEffect, useState } from "react";
+import { getAllEvents } from "../../Common/Services/event.services.js";
+import { getUserById } from "../../Common/Services/user.service.js";
+
 
 const DataList = () => {
+
   // Variables in the state to hold data
-  const [event, setEvent] = useState([]);
-  const [user, setUser] = useState([]);
+  const [events, setEvent] = useState([]);
+  const [users, setUser] = useState([]);
 
   // UseEffect to run when the page loads to
   // obtain async data and render
@@ -19,15 +16,12 @@ const DataList = () => {
       console.log(events);
       setEvent(events);
     });
-  }, []);
 
-  useEffect(() => {
-    getUserById().then((user) => {
-      console.log(user);
-      setUser(user);
+    getUserById().then((users) => {
+      console.log(users);
+      setUser(users);
     });
   }, []);
-
 }
 
 export default DataList;

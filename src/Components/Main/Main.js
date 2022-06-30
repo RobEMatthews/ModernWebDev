@@ -1,7 +1,7 @@
 import React from "react";
 import DisplayData from "./DisplayData.js";
 
-/* MAIN MODULE */
+/* MAIN PARENT COMPONENT */
 const MainModule = () => {
   return (
     <div>
