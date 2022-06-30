@@ -6,10 +6,11 @@ import FavoritesModule from "./Favorites/Favorites.js";
 const Components = () => {
   return (
     <><div>
-          <MainModule />
-      </div><div>
-              <FavoritesModule />
-          </div></>
+        <MainModule />
+      </div>
+      <div>
+        <FavoritesModule />
+      </div></>
   );
 };
 

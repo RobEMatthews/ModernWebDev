@@ -1,20 +1,33 @@
-// Intend to pull data from the .json file which has username/password data and send data to child (data down)
-
+// Pull in Data
+import React, { useEffect, useState } from "react";
 import {
-    html,
-    useEffect
-  } from "https://unpkg.com/htm/preact/standalone.module.js";
-  
-  export function Parent({ title, children }) {
-    useEffect(() => {
-      document.title = title;
-    }, [title]);
-  
-    return html`
-      <header>
-        <h1>${title}</h1>
-        ${children}
-      </header>
-    `;
-  }
-  
+  getAllEvents
+} from "/src/Common/Services/event.services.js";
+import {
+  getUserById
+} from "/src/Common/Services/user.service.js";
+
+const DataList = () => {
+  // Variables in the state to hold data
+  const [event, setEvent] = useState([]);
+  const [user, setUser] = useState([]);
+
+  // UseEffect to run when the page loads to
+  // obtain async data and render
+  useEffect(() => {
+    getAllEvents().then((events) => {
+      console.log(events);
+      setEvent(events);
+    });
+  }, [events]);
+
+  useEffect(() => {
+    getUserById().then((user) => {
+      console.log(user);
+      setUser(user);
+    });
+  }, [events]);
+
+}
+
+export default DataList;
