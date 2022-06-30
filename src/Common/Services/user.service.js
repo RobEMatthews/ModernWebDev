@@ -5,7 +5,6 @@ export const getUserById = (id) => {
     const query = new Parse.Query(User);
     return query.get("glXvOEbAvS").then((result) => {
       // return User object with objectId: id
-      console.log("results",result)
       return result;
     });
   };

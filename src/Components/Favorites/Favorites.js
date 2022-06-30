@@ -19,7 +19,7 @@ const FavoritesModule = () => {
     <input type="radio" name="sport" value="baseball" />
     <b class="option">Baseball</b>
     <img
-      src="/images/baseball_image.jpg"
+      src="src/images/baseball_image.jpg"
       alt="Baseball"
       width="100"
       height="100"
@@ -28,7 +28,7 @@ const FavoritesModule = () => {
     <input type="radio" name="sport" value="football" />
     <b class="option">Football</b>
     <img
-      src="/images/football_image.jpg"
+      src="src/images/football_image.jpg"
       alt="Football"
       width="100"
       height="100"
@@ -36,7 +36,7 @@ const FavoritesModule = () => {
     <input type="radio" name="sport" value="basketball" />
     <b class="option">Basketball</b>
     <img
-      src="/images/basketball_image.jpg"
+      src="src/images/basketball_image.jpg"
       alt="Basketball"
       width="100"
       height="100"
@@ -44,7 +44,7 @@ const FavoritesModule = () => {
     <input type="radio" name="sport" value="hockey" />
     <b class="option">Hockey</b>
     <img
-      src="/images/hockey_image.jpg"
+      src="src/images/hockey_image.jpg"
       alt="Hockey"
       width="100"
       height="100"
@@ -52,7 +52,7 @@ const FavoritesModule = () => {
     <input type="radio" name="sport" value="soccer" />
     <b class="option">Soccer</b>
     <img
-      src="/images/soccer_image.jpg"
+      src="src/images/soccer_image.jpg"
       alt="Soccer"
       width="100"
       height="100"
@@ -127,7 +127,7 @@ const FavoritesModule = () => {
 {/*begin use of the grid layout*/}
 <article>
   <img
-    src="/images/baseball_image.jpg"
+    src="src/images/baseball_image.jpg"
     alt="Baseball"
     width="100"
     height="100"
@@ -136,7 +136,7 @@ const FavoritesModule = () => {
 </article>
 <article>
   <img
-    src="/images/football_image.jpg"
+    src="src/images/football_image.jpg"
     alt="Football"
     width="100"
     height="100"
@@ -145,7 +145,7 @@ const FavoritesModule = () => {
 </article>
 <article>
   <img
-    src="/images/basketball_image.jpg"
+    src="src/images/basketball_image.jpg"
     alt="Basketball"
     width="100"
     height="100"
@@ -154,7 +154,7 @@ const FavoritesModule = () => {
 </article>
 <article>
   <img
-    src="/images/hockey_image.jpg"
+    src="src/images/hockey_image.jpg"
     alt="Hockey"
     width="100"
     height="100"
@@ -163,7 +163,7 @@ const FavoritesModule = () => {
 </article>
 <article>
   <img
-    src="/images/soccer_image.jpg"
+    src="src/images/soccer_image.jpg"
     alt="Soccer"
     width="100"
     height="100"
@@ -174,7 +174,7 @@ const FavoritesModule = () => {
 <h1 class="title">Baseball Events</h1>
 
 <img
-  src="/images/baseball_image.jpg"
+  src="src/images/baseball_image.jpg"
   alt="Baseball"
   width="100"
   height="100"
@@ -183,7 +183,7 @@ const FavoritesModule = () => {
 <h1 class="title">Basketball Events</h1>
 
 <img
-  src="/images/basketball_image.jpg"
+  src="src/images/basketball_image.jpg"
   alt="Basketball"
   width="100"
   height="100"
@@ -192,7 +192,7 @@ const FavoritesModule = () => {
 <h1 class="title">Football Events</h1>
 
 <img
-  src="/images/football_image.jpg"
+  src="src/images/football_image.jpg"
   alt="Football"
   width="100"
   height="100"
@@ -200,11 +200,11 @@ const FavoritesModule = () => {
 
 <h1 class="title">Hockey Events</h1>
 
-<img src="/images/hockey_image.jpg" alt="Hockey" width="100" height="100" />
+<img src="src/images/hockey_image.jpg" alt="Hockey" width="100" height="100" />
 
 <h1 class="title">Soccer Events</h1>
 
-<img src="/images/soccer_image.jpg" alt="Soccer" width="100" height="100" />
+<img src="src/images/soccer_image.jpg" alt="Soccer" width="100" height="100" />
 
     </div>
   );

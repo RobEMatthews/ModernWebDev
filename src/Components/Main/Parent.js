@@ -19,14 +19,14 @@ const DataList = () => {
       console.log(events);
       setEvent(events);
     });
-  }, [events]);
+  }, []);
 
   useEffect(() => {
     getUserById().then((user) => {
       console.log(user);
       setUser(user);
     });
-  }, [events]);
+  }, []);
 
 }
 

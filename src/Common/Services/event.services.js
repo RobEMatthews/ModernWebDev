@@ -7,7 +7,6 @@ export function getAllEvents() {
     const query = new Parse.Query(Event);
     return query.find().then((results) => {
       // returns array of Lesson objects
-      console.log("results", results)
       return results;
     });
   }
@@ -17,7 +16,6 @@ export function getAllEvents() {
     const query = new Parse.Query(Event);
     query.equalTo("user",userObject)
     return query.find().then((results) => {
-        console.log("user results", results)
       // returns array of user objects
       return results;
     });
