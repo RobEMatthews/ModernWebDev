@@ -1,6 +1,6 @@
 import React from "react";
 import DisplayData from "./DisplayData.js";
-import DisplayFavorites from "../Favorites/DisplayFavorites.js";
+import { Link } from "react-router-dom";
 
 /* MAIN PARENT COMPONENT */
 const MainModule = () => {
@@ -56,7 +56,9 @@ const MainModule = () => {
       By creating an account you agree to our Terms and Privacy.
     </p>
 
-    <button type="submit" class="option">Register</button>
+    <Link to="/register">
+        <button type="submit" class="option">Register</button>
+    </Link>
   </div>
 
  
@@ -94,13 +96,13 @@ const MainModule = () => {
       By creating an account you agree to our Terms and Privacy
     </p>
 
-    <button type="submit" class="option">Register</button>
+    <Link to="/login">
+    <button type="submit" class="option">Login</button>
+    </Link>
+    
   </div>
   <div>
     <DisplayData />
-  </div>
-  <div>
-    <DisplayFavorites />
   </div>
 
 </form>

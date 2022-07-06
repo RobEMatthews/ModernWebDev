@@ -1,4 +1,5 @@
 import React from "react";
+
 import MainModule from "./Main/Main.js";
 import FavoritesModule from "./Favorites/Favorites.js";
 
@@ -9,7 +10,7 @@ const Components = () => {
         <MainModule />
       </div>
 
-       <div>
+      <div>
         <FavoritesModule />
       </div></> 
   );

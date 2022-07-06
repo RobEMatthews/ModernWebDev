@@ -14,7 +14,7 @@ export const getEventbyUser = (userObject) => {
   const query = new Parse.Query(Event);
   query.equalTo("user",userObject);
   return query.find().then((results) => {
-    // returns array of user objects
+    // returns array of User objects
     return results;
   });
 };
