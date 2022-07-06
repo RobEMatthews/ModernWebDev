@@ -8,9 +8,10 @@ const Components = () => {
     <><div>
         <MainModule />
       </div>
-      <div>
+
+       <div>
         <FavoritesModule />
-      </div></>
+      </div></> 
   );
 };
 

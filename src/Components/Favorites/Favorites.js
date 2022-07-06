@@ -1,4 +1,5 @@
 import React from "react";
+import DisplayFavorites from "./DisplayFavorites"; 
 
 /* Favorites MODULE */
 const FavoritesModule = () => {
@@ -205,6 +206,10 @@ const FavoritesModule = () => {
 <h1 class="title">Soccer Events</h1>
 
 <img src="src/images/soccer_image.jpg" alt="Soccer" width="100" height="100" />
+
+  <div>
+    <DisplayFavorites />
+  </div>
 
     </div>
   );
