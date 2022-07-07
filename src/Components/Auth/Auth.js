@@ -1,9 +1,23 @@
 import React from "react";
-import DisplayData from "./DisplayData.js";
-import { Link } from "react-router-dom";
+// import DisplayData from "./DisplayData.js";
+import Parse from "parse";
+import { Link, useHistory } from "react-router-dom";
 
 /* MAIN PARENT COMPONENT */
 const AuthModule = () => {
+  const history = useHistory();
+
+  const currentUser = Parse.User.current();
+  // Parse.User.authenticated()
+
+  const buttonHandler1 = () => {
+    history.push("/AuthRegisterForm");
+  };
+
+  const buttonHandler2 = () => {
+    history.push("/AuthLoginForm");
+  };
+
   return (
     <><h1 class="title">SportEventTracker</h1>
 
@@ -12,20 +26,16 @@ const AuthModule = () => {
       Please click this button to create a SportEventTracker account.
     </p>
     <Link to="/register">
-      <button>Register</button>
+      <button onClick={buttonHandler1}>Register</button>
     </Link>
     <br />
     <br />
     <Link to="/login">
-      <button>Login</button>
+      <button onClick={buttonHandler2}>Login</button>
     </Link>
   </div>
 
-    <hr />
-
-  <div>
-    <DisplayData />
-  </div></>
+    <hr /></>
 
   );
 };

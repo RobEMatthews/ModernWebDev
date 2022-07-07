@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 
 /* Favorites MODULE */
 const FavoritesForm = () => {
-  // const { firstname, lastname } = useParams();
+  const { firstname, lastname } = useParams();
   
   return (
     <div>
