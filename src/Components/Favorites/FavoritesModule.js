@@ -9,9 +9,8 @@ import Parse from "parse";
 const FavoritesModule = () => {
 
     const [flag, setFlag] = useState(false);
-    var check = document.getElementById("flagBox");
-
-    const currentUser = Parse.User.current();
+    
+    var check = !!(Parse.User.current() && Parse.User.current().authenticated)
 
     // Variables in the state to hold data
     const [events, setEvent] = useState([]);
@@ -31,14 +30,12 @@ const FavoritesModule = () => {
       });
 
       if (check) {
-        if (check.currentUser.authenticated()) {
           console.log("GOOD");
           setFlag(true);
         } else {
           console.log("BAD");
           setFlag(false);
         }
-      }
 
     }, [check]);
 

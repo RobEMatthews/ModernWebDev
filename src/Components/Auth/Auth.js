@@ -22,12 +22,12 @@ const AuthModule = () => {
       Please click this button to create a SportEventTracker account.
     </p>
     <Link to="/register">
-      <button id="flagBox" onClick={buttonHandler1}>Register</button>
+      <button onClick={buttonHandler1}>Register</button>
     </Link>
     <br />
     <br />
     <Link to="/login">
-      <button id="flagBox" onClick={buttonHandler2}>Login</button>
+      <button onClick={buttonHandler2}>Login</button>
     </Link>
   </div>
 
