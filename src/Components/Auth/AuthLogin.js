@@ -63,7 +63,7 @@ const AuthLogin = () => {
       User: {firstname} {lastname}{" "}
     </h1>
     <button>
-      <Link to="/main">Go back.</Link>
+      <Link to="/auth">Go back.</Link>
     </button>
     </div></>
   );

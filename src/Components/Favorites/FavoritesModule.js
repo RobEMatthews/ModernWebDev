@@ -4,11 +4,14 @@ import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import { getAllEvents } from "../../Common/Services/event.services.js";
 import { getUserById } from "../../Common/Services/user.service.js";
 import FavoritesForm from "./FavoritesForm";
+import Parse from "parse";
 
 const FavoritesModule = () => {
 
     const [flag, setFlag] = useState(false);
     var check = document.getElementById("flagBox");
+
+    const currentUser = Parse.User.current();
 
     // Variables in the state to hold data
     const [events, setEvent] = useState([]);
@@ -28,7 +31,7 @@ const FavoritesModule = () => {
       });
 
       if (check) {
-        if (check.checked) {
+        if (check.currentUser.authenticated()) {
           console.log("GOOD");
           setFlag(true);
         } else {
