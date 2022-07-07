@@ -8,8 +8,9 @@ import {
 
 import AuthModule from "./Auth/Auth.js";
 import AuthRegister from "./Auth/AuthRegister";
+import AuthLogin from "./Auth/AuthLogin";
 
-import FavoritesModule from "./Favorites/Favorites.js";
+import FavoritesModule from "./Favorites/FavoritesModule.js";
 
 
 const Components = () => {
@@ -19,13 +20,11 @@ const Components = () => {
         <Route path="/auth" exact component={AuthModule} />
         <Route path="/register" component={AuthRegister} />
         <Route path="/login" component={AuthLogin} />
+        <Route path="/favorite" component={FavoritesModule} />
         <Redirect to="/auth" />
       </Switch>
     </Router>
-
-    <div>
-      <FavoritesModule />
-    </div></> 
+    </> 
 
   );
 };

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { createUser } from "../../Common/Services/AuthService";
-import AuthForm from "./AuthForm";
+import AuthRegisterForm from "./AuthRegisterForm";
 
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
+    favoriteSport: ""
   });
 
   // flags in the state to watch for add/remove updates
@@ -48,7 +49,7 @@ const AuthRegister = () => {
 
   return (
     <div>
-      <AuthForm
+      <AuthRegisterForm
         user={newUser}
         onChange={onChangeHandler}
         onSubmit={onSubmitHandler}

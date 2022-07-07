@@ -5,10 +5,11 @@ const AuthLoginForm = ({ user, onChange, onSubmit }) => {
     <div>
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="form-group">
-          <label>Email</label>
+        <label for="email"><b class="question">Email</b></label>
           <br />
           <input
             type="email"
+            placeholder="Enter Email"
             className="form-control"
             id="email-input"
             value={user.email}
@@ -18,10 +19,11 @@ const AuthLoginForm = ({ user, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
-          <label>Password</label>
+        <label for="psw"><b class="question">Password</b></label>
           <br />
           <input
             type="password"
+            placeholder="Enter Password"
             className="form-control"
             id="password-input"
             value={user.password}
@@ -32,7 +34,7 @@ const AuthLoginForm = ({ user, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-primary" onSubmit={onSubmit}>
+          <button type="submit" className="btn-primary" onSubmit={onSubmit}>
             Login
           </button>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const AuthForm = ({ user, onChange, onSubmit }) => {
+const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
   return (
     <div>
       <form onSubmit={onSubmit} autoComplete="off">
@@ -59,13 +59,32 @@ const AuthForm = ({ user, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-primary" onSubmit={onSubmit}>
+          <label>Favorite Sport</label>
+          <br />
+          <input
+            type="text"
+            placeholder="Favorite Sport"
+            className="form-control"
+            id="favorite_sport-input"
+            value={user.password}
+            onChange={onChange}
+            name="fav_sport"
+            min="0"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <button type="submit" className="btn-primary" onSubmit={onSubmit}>
             Submit
           </button>
         </div>
       </form>
+      <hr />
+        <p class="option">
+          By creating an account you agree to our Terms and Privacy.
+        </p>
     </div>
   );
 };
 
-export default AuthForm;
+export default AuthRegisterForm;

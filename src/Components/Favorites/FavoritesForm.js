@@ -1,12 +1,18 @@
 // this should be the protected route
 
 import React from "react";
-import DisplayFavorites from "./DisplayFavorites"; 
+import { Link, useParams } from "react-router-dom";
 
 /* Favorites MODULE */
-const FavoritesModule = () => {
+const FavoritesForm = () => {
+  // const { firstname, lastname } = useParams();
+  
   return (
     <div>
+      <h1>
+        {" "}
+        User: {firstname} {lastname}{" "}
+      </h1>
          <div id="app"></div>
 
 <form action="/action_page.php">
@@ -209,12 +215,12 @@ const FavoritesModule = () => {
 
 <img src="src/images/soccer_image.jpg" alt="Soccer" width="100" height="100" />
 
-  <div>
-    <DisplayFavorites />
-  </div>
+<button>
+        <Link to="/auth">Go back.</Link>
+ </button>
 
     </div>
   );
 };
 
-export default FavoritesModule;
+export default FavoritesForm;
