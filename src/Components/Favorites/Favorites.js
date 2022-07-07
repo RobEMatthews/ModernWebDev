@@ -1,3 +1,5 @@
+// this should be the protected route
+
 import React from "react";
 import DisplayFavorites from "./DisplayFavorites"; 
 
