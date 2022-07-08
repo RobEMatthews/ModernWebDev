@@ -3,6 +3,7 @@ import { checkUser } from "../../Common/Services/AuthService";
 import AuthLoginForm from "./AuthLoginForm";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import Parse from "parse";
 
 // STATEFUL PARENT COMPONENT
 const AuthLogin = () => {
@@ -18,7 +19,12 @@ const AuthLogin = () => {
   // useEffect that run when changes are made to the state variable flags
   const history = useHistory();
   
+  const check = !!(Parse.User.current() && Parse.User.current().authenticated);
+
   useEffect(() => {
+    if (check) {
+      history.push("/favorites");
+    }
     if (authUser && add) {
       checkUser(authUser).then((userChecked) => {
         if (userChecked) {
@@ -30,7 +36,7 @@ const AuthLogin = () => {
         setAdd(false);
       });
     }
-  }, [authUser, add]);
+  }, [authUser, add, history, check]);
 
   const onChangeHandler = (e) => {
     e.preventDefault();

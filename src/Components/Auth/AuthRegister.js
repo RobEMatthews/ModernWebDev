@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { createUser } from "../../Common/Services/AuthService";
 import AuthRegisterForm from "./AuthRegisterForm";
 import { useHistory } from "react-router-dom";
+import Parse from "parse";
 
 // STATEFUL PARENT COMPONENT
 const AuthRegister = () => {
@@ -17,8 +18,15 @@ const AuthRegister = () => {
   const [add, setAdd] = useState(false);
   const history = useHistory();
 
+  const check = !!(Parse.User.current() && Parse.User.current().authenticated);
+
   // useEffect that run when changes are made to the state variable flags
   useEffect(() => {
+
+    if (check) {
+      history.push("/favorites");
+    }
+
     if (newUser && add) {
       createUser(newUser).then((userCreated) => {
         if (userCreated) {
@@ -30,7 +38,7 @@ const AuthRegister = () => {
         setAdd(false);
       });
     }
-  }, [newUser, add]);
+  }, [newUser, add, check, history]);
 
   const onChangeHandler = (e) => {
     e.preventDefault();

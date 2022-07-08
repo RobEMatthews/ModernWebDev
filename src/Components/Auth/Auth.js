@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
+import Parse from "parse";
 
 /* STATEFUL PARENT COMPONENT */
 const AuthModule = () => {
   const history = useHistory();
+  
+  const check = !!(Parse.User.current() && Parse.User.current().authenticated);
+
+  useEffect(() => {
+      if (check) {
+              history.push("/favorites");
+          }
+  }, [check, history]);
 
   const buttonHandler1 = () => {
     history.push("/AuthRegisterForm");
