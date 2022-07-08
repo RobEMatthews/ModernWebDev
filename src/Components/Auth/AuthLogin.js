@@ -4,15 +4,12 @@ import AuthLoginForm from "./AuthLoginForm";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-
+// STATEFUL PARENT COMPONENT
 const AuthLogin = () => {
 
   const [authUser, setAuthUser] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
-    password: "",
-    favoriteSport: ""
+    password: ""
   });
 
   // flags in the state to watch for add/remove updates
@@ -25,8 +22,8 @@ const AuthLogin = () => {
     if (authUser && add) {
       checkUser(authUser).then((userChecked) => {
         if (userChecked) {
+          console.log(userChecked);
           alert(`${userChecked.get("firstName")}, you successfully logged in!`);
-          
           history.push("/favorites");
         }
 

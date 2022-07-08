@@ -10,22 +10,20 @@ import AuthModule from "./Auth/Auth.js";
 import AuthRegister from "./Auth/AuthRegister";
 import AuthLogin from "./Auth/AuthLogin";
 
-import FavoritesGood from "./Favorites/FavoritesGood.js";
+import FavoritesModule from "./Favorites/FavoritesModule.js";
 
 
 const Components = () => {
   return (
-    <><Router>
+    <Router>
       <Switch>
-        <Route path="/auth" exact component={AuthModule} />
+        <Route path="/favorites" exact component={FavoritesModule} />
+        <Route path="/auth" component={AuthModule} />
         <Route path="/register" component={AuthRegister} />
         <Route path="/login" component={AuthLogin} />
-        <Route path="/favorites" component={FavoritesGood} />
         <Redirect to="/auth" />
       </Switch>
     </Router>
-    </> 
-
   );
 };
 

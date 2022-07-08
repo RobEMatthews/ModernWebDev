@@ -27,8 +27,6 @@ export const checkUser = (authUser) => {
   const user = new Parse.User();
 
   user.set("username", authUser.email);
-  user.set("firstName", authUser.firstName);
-  user.set("lastName", authUser.lastName);
   user.set("password", authUser.password);
   user.set("email", authUser.email);
 

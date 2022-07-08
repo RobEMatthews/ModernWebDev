@@ -1,4 +1,4 @@
-// this should be the protected route
+// PROTECTED ROUTE
 
 import React from "react";
 

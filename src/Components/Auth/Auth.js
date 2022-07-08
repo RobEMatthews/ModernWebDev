@@ -1,8 +1,7 @@
 import React from "react";
-// import DisplayData from "./DisplayData.js";
 import { Link, useHistory } from "react-router-dom";
 
-/* MAIN PARENT COMPONENT */
+/* STATEFUL PARENT COMPONENT */
 const AuthModule = () => {
   const history = useHistory();
 

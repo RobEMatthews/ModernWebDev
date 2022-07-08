@@ -1,22 +1,21 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import FavoritesForm from "./FavoritesForm"
+import Parse from "parse";
 
-// You must make sure to check this protected route even when manually typing in url
-// or you can easily bypass the auth
 const FavoritesGood = () => {
     
-  const { firstname, lastname } = useParams();
+  const { username } = Parse.User.current().attributes;
   return (
     <div>
       <h1>
         {" "}
-        User: {firstname} {lastname}{" "}
+        User: {username}{" "}
       </h1>
       <FavoritesForm/>
       <button>
         <Link to="/auth">Go back.</Link>
-      </button>
+      </button>S
     </div>
   );
 };

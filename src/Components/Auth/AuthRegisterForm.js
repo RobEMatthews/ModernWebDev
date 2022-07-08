@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+// STATELESS CHILD COMPONENT
 const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
   return (
     <div>
@@ -71,7 +73,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
             id="favorite-sport-input"
             value={user.favoriteSport}
             onChange={onChange}
-            name="fav-sport"
+            name="favoriteSport"
             placeholder="favorite sport"
             min="0"
             required
