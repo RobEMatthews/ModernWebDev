@@ -23,3 +23,5 @@ const ProtectedRoute = ({ component: Component, flag, ...rest }) => {
 };
 
 export default ProtectedRoute;
+
+//  TODO - redirect to Component

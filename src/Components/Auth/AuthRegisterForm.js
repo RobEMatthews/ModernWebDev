@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
   return (
@@ -28,6 +29,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
             value={user.lastName}
             onChange={onChange}
             name="lastName"
+            placeholder="last name"
             required
           />
         </div>{" "}
@@ -41,6 +43,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
             value={user.email}
             onChange={onChange}
             name="email"
+            placeholder="email"
             required
           />
         </div>{" "}
@@ -54,6 +57,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
             value={user.password}
             onChange={onChange}
             name="password"
+            placeholder="password"
             min="0"
             required
           />
@@ -63,12 +67,12 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           <br />
           <input
             type="text"
-            placeholder="Favorite Sport"
             className="form-control"
-            id="favorite_sport-input"
-            value={user.password}
+            id="favorite-sport-input"
+            value={user.favoriteSport}
             onChange={onChange}
-            name="fav_sport"
+            name="fav-sport"
+            placeholder="favorite sport"
             min="0"
             required
           />
@@ -79,6 +83,9 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           </button>
         </div>
       </form>
+      <button>
+      <Link to="/auth">Go back</Link>
+    </button>
       <hr />
         <p class="option">
           By creating an account you agree to our Terms and Privacy.

@@ -32,7 +32,7 @@ const AuthLoginForm = ({ user, onChange, onSubmit }) => {
             min="0"
             required
           />
-        </div>
+        </div>{" "}
         <div className="form-group">
           <button type="submit" className="btn-primary" onSubmit={onSubmit}>
             Login

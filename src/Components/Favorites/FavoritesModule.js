@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import { getAllEvents } from "../../Common/Services/event.services.js";
 import { getUserById } from "../../Common/Services/user.service.js";
-import FavoritesForm from "./FavoritesForm";
 import Parse from "parse";
+import FavoritesGood from "./FavoritesGood";
 
 const FavoritesModule = () => {
 
@@ -43,9 +43,9 @@ const FavoritesModule = () => {
     <div>
       <ProtectedRoute
       exact
-      path="/user/firstName/lastName"
+      path="/favoritesGood"
       flag={flag}
-      component={FavoritesForm}
+      component={FavoritesGood}
       />
     </div>
 

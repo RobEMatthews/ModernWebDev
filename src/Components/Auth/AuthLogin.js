@@ -1,30 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { checkUser } from "../../Common/Services/AuthService";
 import AuthLoginForm from "./AuthLoginForm";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import FavoritesModule from "../Favorites/FavoritesModule";
+
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch
+} from "react-router-dom";
+
 
 const AuthLogin = () => {
-
-  const { firstname, lastname } = useParams();
 
   const [authUser, setAuthUser] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
+    favoriteSport: ""
   });
 
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
 
   // useEffect that run when changes are made to the state variable flags
+  const history = useHistory();
+  
   useEffect(() => {
     if (authUser && add) {
       checkUser(authUser).then((userChecked) => {
         if (userChecked) {
           alert(`${userChecked.get("firstName")}, you successfully logged in!`);
+          
+          // history.push("/favorites/Favo");
         }
-        // TODO: redirect user to main app
+      <Router>
+      <Switch>
+      <Route path="/favorites" component={FavoritesModule} />
+      </Switch>
+      </Router>
+        
         setAdd(false);
       });
     }
@@ -58,12 +76,9 @@ const AuthLogin = () => {
     </div>
 
     <div>
-    <h1>
-      {" "}
-      User: {firstname} {lastname}{" "}
-    </h1>
+
     <button>
-      <Link to="/auth">Go back.</Link>
+      <Link to="/auth">Go back</Link>
     </button>
     </div></>
   );
