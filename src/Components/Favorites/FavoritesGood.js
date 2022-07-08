@@ -5,6 +5,7 @@ import FavoritesForm from "./FavoritesForm"
 // You must make sure to check this protected route even when manually typing in url
 // or you can easily bypass the auth
 const FavoritesGood = () => {
+    
   const { firstname, lastname } = useParams();
   return (
     <div>

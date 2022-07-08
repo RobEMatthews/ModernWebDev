@@ -3,14 +3,6 @@ import { checkUser } from "../../Common/Services/AuthService";
 import AuthLoginForm from "./AuthLoginForm";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import FavoritesModule from "../Favorites/FavoritesModule";
-
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch
-} from "react-router-dom";
 
 
 const AuthLogin = () => {
@@ -35,14 +27,9 @@ const AuthLogin = () => {
         if (userChecked) {
           alert(`${userChecked.get("firstName")}, you successfully logged in!`);
           
-          // history.push("/favorites/Favo");
+          history.push("/favorites");
         }
-      <Router>
-      <Switch>
-      <Route path="/favorites" component={FavoritesModule} />
-      </Switch>
-      </Router>
-        
+
         setAdd(false);
       });
     }

@@ -43,7 +43,7 @@ const FavoritesModule = () => {
     <div>
       <ProtectedRoute
       exact
-      path="/favoritesGood"
+      path="/favorites"
       flag={flag}
       component={FavoritesGood}
       />
