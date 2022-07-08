@@ -50,6 +50,20 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
+          <label>Username</label>
+          <br />
+          <input
+            type="text"
+            className="form-control"
+            id="username-input"
+            value={user.username}
+            onChange={onChange}
+            name="username"
+            placeholder="username"
+            required
+          />
+        </div>{" "}
+        <div className="form-group">
           <label>Password</label>
           <br />
           <input

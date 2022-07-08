@@ -1,10 +1,11 @@
 import Parse from "parse";
 
-// used in auth register component
-export const createUser = (newUser) => {
+// used in auth register component to create a new user
+export async function createUser(newUser) {
   const user = new Parse.User();
 
-  user.set("username", newUser.email);
+  // use setter to assign values
+  user.set("username", newUser.username);
   user.set("firstName", newUser.firstName);
   user.set("lastName", newUser.lastName);
   user.set("password", newUser.password);
@@ -12,18 +13,17 @@ export const createUser = (newUser) => {
   user.set("favoriteSport", newUser.favoriteSport);
 
   console.log("User: ", user);
-  return user
-    .signUp()
-    .then((newUserSaved) => {
-      return newUserSaved;
-    })
-    .catch((error) => {
-      alert(`Error: ${error.message}`);
-    });
+  try {
+    const newUserSaved = await user
+      .signUp();
+    return newUserSaved;
+  } catch (error) {
+    alert(`Error: ${error.message}`);
+  }
 };
 
 // used in auth login component
-export const checkUser = (authUser) => {
+export async function checkUser(authUser) {
   const user = new Parse.User();
 
   user.set("username", authUser.email);
@@ -31,12 +31,11 @@ export const checkUser = (authUser) => {
   user.set("email", authUser.email);
 
   console.log("User: ", user);
-  return user
-    .logIn()
-    .then((authUserSaved) => {
-      return authUserSaved;
-    })
-    .catch((error) => {
-      alert(`Error: ${error.message}`);
-    });
-};
+  try {
+    const authUserSaved = await user
+      .logIn();
+    return authUserSaved;
+  } catch (error) {
+    alert(`Error: ${error.message}`);
+  }
+}

@@ -10,9 +10,9 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
     history.goBack();
   };
 
-  console.log(rest); // show rest.path in the console
-
   const [flag, setFlag] = useState(false);
+
+  // logic to assign boolean value based on existence of authenticated user
   const check = !!(Parse.User.current() && Parse.User.current().authenticated);
 
   useEffect(() => {
@@ -42,4 +42,3 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 };
 
 export default ProtectedRoute;
-//  TODO - redirect to Component
