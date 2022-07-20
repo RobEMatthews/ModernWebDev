@@ -67,6 +67,7 @@ const AuthLogin = () => {
 
     <div>
     {/* go back link */}
+    <br />
     <button>
       <Link to="/auth">Go back</Link>
     </button>

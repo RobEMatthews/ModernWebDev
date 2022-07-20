@@ -1,6 +1,6 @@
 /* 1 */
 :root {
-    --font-color: #333;
+    --font-color: rgb(144, 144, 144);
     --background-color: #eee;
     --link-color: cornflowerblue;
   }
@@ -8,7 +8,7 @@
   /* 2 */
   [data-theme="dark"] {
     --font-color: #eee;
-    --background-color: #333;
+    --background-color: rgb(116, 116, 116);
     --link-color: lightblue;
   }
   
@@ -31,7 +31,11 @@
   }
   
   .toggle-theme-wrapper span {
-    font-size: 28px;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    /* font-size: 0.8em; */
+    /* padding: 1em; */
+    color: navy;
   }
   
   .toggle-theme {

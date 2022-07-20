@@ -2,6 +2,13 @@
 
 import React from "react";
 
+import baseball_img from "../../images/baseball_image.jpg"; // you can import them
+import basketball_img from "../../images/basketball_image.jpg"; // you can import them
+import football_img from "../../images/football_image.jpg"; // you can import them
+import soccer_img from "../../images/soccer_image.jpg"; // you can import them
+import hockey_img from "../../images/hockey_image.jpg"; // you can import them
+
+
 /* Favorites MODULE */
 const FavoritesForm = () => {
   
@@ -22,7 +29,7 @@ const FavoritesForm = () => {
     <input type="radio" name="sport" value="baseball" />
     <b class="option">Baseball</b>
     <img
-      src="src/images/baseball_image.jpg"
+      src={baseball_img}
       alt="Baseball"
       width="100"
       height="100"
@@ -31,7 +38,7 @@ const FavoritesForm = () => {
     <input type="radio" name="sport" value="football" />
     <b class="option">Football</b>
     <img
-      src="src/images/football_image.jpg"
+      src={football_img}
       alt="Football"
       width="100"
       height="100"
@@ -39,7 +46,7 @@ const FavoritesForm = () => {
     <input type="radio" name="sport" value="basketball" />
     <b class="option">Basketball</b>
     <img
-      src="src/images/basketball_image.jpg"
+      src={basketball_img}
       alt="Basketball"
       width="100"
       height="100"
@@ -47,7 +54,7 @@ const FavoritesForm = () => {
     <input type="radio" name="sport" value="hockey" />
     <b class="option">Hockey</b>
     <img
-      src="src/images/hockey_image.jpg"
+      src={hockey_img}
       alt="Hockey"
       width="100"
       height="100"
@@ -55,7 +62,7 @@ const FavoritesForm = () => {
     <input type="radio" name="sport" value="soccer" />
     <b class="option">Soccer</b>
     <img
-      src="src/images/soccer_image.jpg"
+      src={soccer_img}
       alt="Soccer"
       width="100"
       height="100"
@@ -130,7 +137,7 @@ const FavoritesForm = () => {
 {/*begin use of the grid layout*/}
 <article>
   <img
-    src="src/images/baseball_image.jpg"
+    src={baseball_img}
     alt="Baseball"
     width="100"
     height="100"
@@ -139,7 +146,7 @@ const FavoritesForm = () => {
 </article>
 <article>
   <img
-    src="src/images/football_image.jpg"
+    src={football_img}
     alt="Football"
     width="100"
     height="100"
@@ -148,7 +155,7 @@ const FavoritesForm = () => {
 </article>
 <article>
   <img
-    src="src/images/basketball_image.jpg"
+    src={basketball_img}
     alt="Basketball"
     width="100"
     height="100"
@@ -157,7 +164,7 @@ const FavoritesForm = () => {
 </article>
 <article>
   <img
-    src="src/images/hockey_image.jpg"
+    src={hockey_img}
     alt="Hockey"
     width="100"
     height="100"
@@ -166,7 +173,7 @@ const FavoritesForm = () => {
 </article>
 <article>
   <img
-    src="src/images/soccer_image.jpg"
+    src={soccer_img}
     alt="Soccer"
     width="100"
     height="100"
@@ -177,7 +184,7 @@ const FavoritesForm = () => {
 <h1 class="title">Baseball Events</h1>
 
 <img
-  src="src/images/baseball_image.jpg"
+  src={baseball_img}
   alt="Baseball"
   width="100"
   height="100"
@@ -186,7 +193,7 @@ const FavoritesForm = () => {
 <h1 class="title">Basketball Events</h1>
 
 <img
-  src="src/images/basketball_image.jpg"
+  src={basketball_img}
   alt="Basketball"
   width="100"
   height="100"
@@ -195,7 +202,7 @@ const FavoritesForm = () => {
 <h1 class="title">Football Events</h1>
 
 <img
-  src="src/images/football_image.jpg"
+  src={football_img}
   alt="Football"
   width="100"
   height="100"
@@ -203,11 +210,11 @@ const FavoritesForm = () => {
 
 <h1 class="title">Hockey Events</h1>
 
-<img src="src/images/hockey_image.jpg" alt="Hockey" width="100" height="100" />
+<img src={hockey_img} alt="Hockey" width="100" height="100" />
 
 <h1 class="title">Soccer Events</h1>
 
-<img src="src/images/soccer_image.jpg" alt="Soccer" width="100" height="100" />
+<img src={soccer_img} alt="Soccer" width="100" height="100" />
 
 
     </div>

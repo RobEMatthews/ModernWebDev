@@ -26,14 +26,17 @@ const AuthModule = () => {
     <><h1 class="title">SportEventTracker</h1>
 
     <div>
-    <p class="option">
-      Please click this button to create a SportEventTracker account.
-    </p>
+    <h2 class="option">
+      Create a SportEventTracker account:
+    </h2>
     <Link to="/register">
       <button onClick={buttonHandler1}>Register</button>
     </Link>
     <br />
     <br />
+    <h2 class="option">
+      Login to your SportEventTracker account:
+    </h2>
     <Link to="/login">
       <button onClick={buttonHandler2}>Login</button>
     </Link>

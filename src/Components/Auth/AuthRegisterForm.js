@@ -8,6 +8,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
     <div>
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="form-group">
+          <br />
           <label>First Name</label>
           <br />
           <input
@@ -94,11 +95,13 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
+          <br />
           <button type="submit" className="btn-primary" onSubmit={onSubmit}>
             Submit
           </button>
         </div>
       </form>
+      <br />
       <button>
       <Link to="/auth">Go back</Link>
     </button>

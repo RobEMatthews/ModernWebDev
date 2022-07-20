@@ -6,6 +6,7 @@ const AuthLoginForm = ({ user, onChange, onSubmit }) => {
     <div>
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="form-group">
+        <br />
         <label for="email"><b class="question">Email</b></label>
           <br />
           <input
@@ -35,6 +36,7 @@ const AuthLoginForm = ({ user, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
+          <br />
           <button type="submit" className="btn-primary" onSubmit={onSubmit}>
             Login
           </button>

@@ -30,8 +30,8 @@ article {
 
 h1 {
   font-family: "Roboto", sans-serif;
-  border-radius: 10px;
-  padding: 20px;
+  /* border-radius: 10px;
+  padding: 20px; */
   color: #000080;
 }
 
@@ -47,8 +47,8 @@ article:nth-child(even) {
 
 .title {
   font-family: "Roboto", sans-serif;
-  border-radius: 10px;
-  padding: 20px;
+  /* border-radius: 10px; */
+  /* padding: 20px; */
   color: #000080;
 }
 
@@ -64,7 +64,7 @@ article:nth-child(even) {
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
   font-size: 0.8em;
-  padding: 1em;
+  /* padding: 1em; */
   color: navy;
 }
 
