@@ -4,6 +4,11 @@ import AuthRegisterForm from "./AuthRegisterForm";
 import { useHistory } from "react-router-dom";
 import Parse from "parse";
 
+
+
+
+
+
 // STATEFUL PARENT COMPONENT
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState({
@@ -31,10 +36,7 @@ const AuthRegister = () => {
       history.push("/favorites");
     }
 
-    console.log("NEWUSER", newUser);
-    console.log("ADD", add);
     if (newUser && add) {
-      console.log("GOT HERE!!!!!!");
       createUser(newUser).then((userCreated) => {
         if (userCreated) {
           alert(

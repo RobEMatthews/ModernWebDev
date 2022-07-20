@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "private": true,
   "dependencies": {
+    "@types/react": "^18.0.15",
     "parse": "^3.4.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -11,7 +12,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
