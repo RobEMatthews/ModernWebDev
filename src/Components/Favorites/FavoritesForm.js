@@ -2,223 +2,107 @@
 
 import React from "react";
 
-import baseball_img from "../../images/baseball_image.jpg"; // you can import them
-import basketball_img from "../../images/basketball_image.jpg"; // you can import them
-import football_img from "../../images/football_image.jpg"; // you can import them
-import soccer_img from "../../images/soccer_image.jpg"; // you can import them
-import hockey_img from "../../images/hockey_image.jpg"; // you can import them
+// import baseball_img from "../../images/baseball_image.jpg"; 
+// import basketball_img from "../../images/basketball_image.jpg"; 
+// import football_img from "../../images/football_image.jpg"; 
+// import soccer_img from "../../images/soccer_image.jpg"; 
+// import hockey_img from "../../images/hockey_image.jpg"; 
 
 
 /* Favorites MODULE */
-const FavoritesForm = () => {
-  
+const FavoritesForm = ({ event, user, onChange, onSubmit }) => {
   return (
     <div>
-         <div id="app"></div>
+      <div id="app"></div>
 
-<form action="/action_page.php">
-  <div class="container">
-    <h1 class="title">Record an event</h1>
-    <p class="title">Input data to create a new entry in your event log!</p>
+      <form onSubmit={onSubmit} autoComplete="off">
+        <div className="form-group">
+          <br />
+          <label>Sport: </label>
+          <br />
+          <input
+            type="text"
+            className="form-control"
+            id="sport-input"
+            value={event.sport}
+            onChange={onChange}
+            name="sport"
+            placeholder="Sport"
+            required
+          />
+        </div>
 
-    <hr />
+        <div className="form-group">
+          <br />
+          <label>Level: </label>
+          <br />
+          <input
+            type="text"
+            className="form-control"
+            id="level-input"
+            value={event.level}
+            onChange={onChange}
+            name="level"
+            placeholder="Level"
+            required
+          />
+        </div>
 
-    {/*Begin form for entering data about an event*/}
-    {/*Sport label should be a multiple choice*/}
-    <label for="sport"><b class="question">Sport:</b></label>
-    <input type="radio" name="sport" value="baseball" />
-    <b class="option">Baseball</b>
-    <img
-      src={baseball_img}
-      alt="Baseball"
-      width="100"
-      height="100"
-    />
+        <div className="form-group">
+          <br />
+          <label>Date: </label>
+          <br />
+          <input
+            type="date"
+            className="form-control"
+            id="date-input"
+            value={event.date}
+            onChange={onChange}
+            name="date"
+            required
+          />
+        </div>
 
-    <input type="radio" name="sport" value="football" />
-    <b class="option">Football</b>
-    <img
-      src={football_img}
-      alt="Football"
-      width="100"
-      height="100"
-    />
-    <input type="radio" name="sport" value="basketball" />
-    <b class="option">Basketball</b>
-    <img
-      src={basketball_img}
-      alt="Basketball"
-      width="100"
-      height="100"
-    />
-    <input type="radio" name="sport" value="hockey" />
-    <b class="option">Hockey</b>
-    <img
-      src={hockey_img}
-      alt="Hockey"
-      width="100"
-      height="100"
-    />
-    <input type="radio" name="sport" value="soccer" />
-    <b class="option">Soccer</b>
-    <img
-      src={soccer_img}
-      alt="Soccer"
-      width="100"
-      height="100"
-    />
+        <div className="form-group">
+          <br />
+          <label>Venue: </label>
+          <br />
+          <input
+            type="text"
+            className="form-control"
+            id="venue-input"
+            value={event.venue}
+            onChange={onChange}
+            name="venue"
+            placeholder="Venue"
+            required
+          />
+        </div>
 
-    {/*Final option is 'other' for user to input their own sport*/}
-    <input type="radio" name="sport" value="other" checked="checked" />
-    <b class="option">other</b>
-    <input type="text" placeholder="Enter Sport" name="sport" id="sport" />
-
-    <hr />
-
-    {/*Level label should be a multiple choice*/}
-    <label for="level"><b class="question">Level:</b></label>
-    <input type="radio" name="level" value="professional" />
-    <b class="option">Professional</b>
-    <input type="radio" name="level" value="college" />
-    <b class="option">College</b>
-    <input type="radio" name="level" value="highschool" />
-    <b class="option">High School</b>
-    <input type="radio" name="level" value="youth" />
-    <b class="option">Youth</b>
-
-    {/*Final option is 'other' for user to input their own level*/}
-    <input type="radio" name="level" value="other" checked="checked" />
-    <b class="option">other</b>
-    <input
-      type="text"
-      placeholder="Enter Level"
-      name="otherLevel"
-      id="otherLevel"
-    />
-
-    <hr />
-
-    {/*Date form type*/}
-    <label for="eventDate"><b class="question">Date:</b></label>
-    <input type="date" name="date" />
-
-    <hr />
-
-    {/*text type for venue entry*/}
-    <label for="venue"><b class="question">Venue:</b></label>
-    <input
-      type="text"
-      placeholder="Enter Venue"
-      name="venue"
-      id="venue"
-      required
-    />
-
-    <hr />
-
-    {/*text type for comment entry*/}
-    <label for="comment"><b class="question">Comments?</b></label>
-    <input
-      type="text"
-      placeholder="Enter comment"
-      name="comment"
-      id="comment"
-    />
-
-    <hr />
-
-    <button type="submit" class="question">Submit entry</button>
-  </div>
-</form>
-
-<h1>Event Log</h1>
-
-
-{/*begin use of the grid layout*/}
-<article>
-  <img
-    src={baseball_img}
-    alt="Baseball"
-    width="100"
-    height="100"
-  />
-
-</article>
-<article>
-  <img
-    src={football_img}
-    alt="Football"
-    width="100"
-    height="100"
-  />
-
-</article>
-<article>
-  <img
-    src={basketball_img}
-    alt="Basketball"
-    width="100"
-    height="100"
-  />
-
-</article>
-<article>
-  <img
-    src={hockey_img}
-    alt="Hockey"
-    width="100"
-    height="100"
-  />
-
-</article>
-<article>
-  <img
-    src={soccer_img}
-    alt="Soccer"
-    width="100"
-    height="100"
-  />
-
-</article>
-
-<h1 class="title">Baseball Events</h1>
-
-<img
-  src={baseball_img}
-  alt="Baseball"
-  width="100"
-  height="100"
-/>
-
-<h1 class="title">Basketball Events</h1>
-
-<img
-  src={basketball_img}
-  alt="Basketball"
-  width="100"
-  height="100"
-/>
-
-<h1 class="title">Football Events</h1>
-
-<img
-  src={football_img}
-  alt="Football"
-  width="100"
-  height="100"
-/>
-
-<h1 class="title">Hockey Events</h1>
-
-<img src={hockey_img} alt="Hockey" width="100" height="100" />
-
-<h1 class="title">Soccer Events</h1>
-
-<img src={soccer_img} alt="Soccer" width="100" height="100" />
-
-
+        <div className="form-group">
+          <br />
+          <label>Comments? </label>
+          <br />
+          <input
+            type="text"
+            className="form-control"
+            id="comment-input"
+            value={event.comment}
+            onChange={onChange}
+            name="comment"
+            placeholder="Enter Comment"
+          />
+        </div>
+        <div className="form-group">
+          <br />
+          <button type="submit" className="btn-primary" onSubmit={onSubmit}>
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
 
 export default FavoritesForm;
+

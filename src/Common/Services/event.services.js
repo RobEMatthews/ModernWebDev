@@ -12,9 +12,37 @@ export const getAllEvents = () => {
 export const getEventbyUser = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
-  query.equalTo("user",userObject);
+  query.equalTo("user", userObject);
   return query.find().then((results) => {
     // returns array of User objects
     return results;
   });
+};
+
+export async function filterEventbySport (Event) {
+  if(Event.sport === "Baseball") {
+    return true;
+  };
+};
+
+// used to create a new event object assigned to a user
+export async function createEvent(newEvent) {
+  const event = new Parse.Object("Event");
+
+  // use setter to assign values to the event 
+  event.set("sport", newEvent.sport);
+  event.set("level", newEvent.level);
+  event.set("date", newEvent.date);
+  event.set("venue", newEvent.venue);
+  event.set("comment", newEvent.comment);
+  event.set("user", Parse.User.current());
+
+  console.log("Event: ", event);
+  try {
+    const newEventSaved = await event.save();
+      // .signUp();
+    return newEventSaved;
+  } catch (error) {
+    alert(`Error: ${error.message}`);
+  }
 };
