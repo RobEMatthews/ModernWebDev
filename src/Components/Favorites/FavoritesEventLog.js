@@ -35,16 +35,30 @@ const FavoritesEventLog = () => {
       });
     }, [user]);
 
-    if(events.constructor == Array) {
-
-        console.log("events is an array!");
-    }
+    console.log("events: ", events);
     // const baseballEvents = events.filterEventbySport();
     // console.log("baseballEvents: ", baseballEvents);
 
-    return(
-        <><h1>Event Log</h1>
+    const { username } = Parse.User.current().attributes;
 
+    return(
+        <><h1>Event Log for: {username}{" "}</h1>
+
+
+        <div>
+            {events.length > 0 && (
+                <ul>
+                {events.map((event) => (
+                    <div>
+                    <span>
+                        {/* Using getter for event Object to display name */}
+                        <li key={event.objectId}>{event.get("date")} | {event.get("sport")} | {event.get("venue")}</li>{" "}
+                    </span>
+                    </div>
+                ))}
+                </ul>
+            )}
+        </div>
 
         {/*begin use of the grid layout*/}
         

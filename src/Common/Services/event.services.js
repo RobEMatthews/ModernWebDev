@@ -19,7 +19,10 @@ export const getEventbyUser = (userObject) => {
   });
 };
 
+
+
 export async function filterEventbySport (Event) {
+  console.log("Event: ", Event);
   if(Event.sport === "Baseball") {
     return true;
   };
