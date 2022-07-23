@@ -1,6 +1,8 @@
 // PROTECTED ROUTE
 
 import React from "react";
+import UploadAndDisplayImage from "./ImageUpload"
+// import UploadImage from "./UploadingImage";
 
 // import baseball_img from "../../images/baseball_image.jpg"; 
 // import basketball_img from "../../images/basketball_image.jpg"; 
@@ -13,6 +15,7 @@ import React from "react";
 const FavoritesForm = ({ event, user, onChange, onSubmit }) => {
   return (
     <div>
+
       <div id="app"></div>
 
       <form onSubmit={onSubmit} autoComplete="off">
@@ -93,6 +96,11 @@ const FavoritesForm = ({ event, user, onChange, onSubmit }) => {
             placeholder="Enter Comment"
           />
         </div>
+        
+        <div>
+          <UploadAndDisplayImage/>
+        </div>
+        
         <div className="form-group">
           <br />
           <button type="submit" className="btn-primary" onSubmit={onSubmit}>

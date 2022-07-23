@@ -69,7 +69,7 @@ const AuthLogin = () => {
     {/* go back link */}
     <br />
     <button>
-      <Link to="/auth">Go back</Link>
+      <Link to="/auth" class="goBack">Go back</Link>
     </button>
     </div></>
   );

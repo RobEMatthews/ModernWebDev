@@ -9,7 +9,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
       <form onSubmit={onSubmit} autoComplete="off">
         <div className="form-group">
           <br />
-          <label>First Name</label>
+          <label><b class="question">First Name</b></label>
           <br />
           <input
             type="text"
@@ -23,7 +23,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label>Last Name</label>
+          <label><b class="question">Last Name</b></label>
           <br />
           <input
             type="text"
@@ -37,7 +37,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
-          <label>Email</label>
+          <label><b class="question">Email</b></label>
           <br />
           <input
             type="email"
@@ -51,7 +51,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
-          <label>Username</label>
+          <label><b class="question">Username</b></label>
           <br />
           <input
             type="text"
@@ -65,7 +65,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
-          <label>Password</label>
+          <label><b class="question">Password</b></label>
           <br />
           <input
             type="password"
@@ -80,7 +80,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label>Favorite Sport</label>
+          <label><b class="question">Favorite Sport</b></label>
           <br />
           <input
             type="text"
@@ -103,7 +103,7 @@ const AuthRegisterForm = ({ user, onChange, onSubmit }) => {
       </form>
       <br />
       <button>
-      <Link to="/auth">Go back</Link>
+      <Link to="/auth" class="goBack">Go back</Link>
     </button>
       <hr />
         <p class="option">

@@ -34,7 +34,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
         
       ) : (
         <div>
-          <p>Unauthorized!</p> <button onClick={goBackHandler}>Go back.</button>
+          <p class="unauth">Unauthorized!</p> <button onClick={goBackHandler}>Go back</button>
         </div>
       )}
     </div>
