@@ -39,6 +39,7 @@ export async function createEvent(newEvent) {
   event.set("venue", newEvent.venue);
   event.set("comment", newEvent.comment);
   event.set("user", Parse.User.current());
+  event.set("eventImage", newEvent.eventImage);
 
   console.log("Event: ", event);
   try {

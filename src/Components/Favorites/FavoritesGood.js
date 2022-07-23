@@ -26,8 +26,22 @@ const FavoritesGood = () => {
         level: "",
         date: "",
         venue: "",
-        comment: ""
+        comment: "",
     });
+
+    const [selectedImage, setSelectedImage] = useState(null);
+    
+    useEffect(() => {
+        if (selectedImage !== null && selectedImage.size > 0) {
+            const file = selectedImage;
+            const name = "photo";
+        
+            const parseFile = new Parse.File(name, file);
+    
+            newEvent.eventImage = parseFile;
+        }
+    }, [selectedImage, newEvent]);
+
 
     // flags in the state to watch for add/remove updates
     const [add, setAdd] = useState(false);
@@ -49,7 +63,13 @@ const FavoritesGood = () => {
         console.log(e.target);
         const { name, value: newValue } = e.target;
         console.log(newValue);
-    
+
+        console.log(e.target.type);
+        if (e.target.type == 'file'){
+            setSelectedImage(e.target.files[0]);
+        }
+        
+
         setNewEvent({
           ...newEvent,
           [name]: newValue
@@ -60,7 +80,9 @@ const FavoritesGood = () => {
         e.preventDefault();
         console.log("submitted: ", e.target);
         setAdd(true);
+        
       };
+
     
     return (
         <div>
@@ -71,8 +93,10 @@ const FavoritesGood = () => {
         <FavoritesForm
             event={newEvent}
             onChange={onChangeHandler}
-            onSubmit={onSubmitHandler}/>
+            onSubmit={onSubmitHandler}
+            />
         <FavoritesEventLog/>
+        <br />
         <button>
             <Link to="/auth">Go back.</Link>
         </button>

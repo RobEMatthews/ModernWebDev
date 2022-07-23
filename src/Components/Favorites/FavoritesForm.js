@@ -1,7 +1,6 @@
 // PROTECTED ROUTE
 
 import React from "react";
-import UploadAndDisplayImage from "./ImageUpload"
 // import UploadImage from "./UploadingImage";
 
 // import baseball_img from "../../images/baseball_image.jpg"; 
@@ -96,9 +95,13 @@ const FavoritesForm = ({ event, user, onChange, onSubmit }) => {
             placeholder="Enter Comment"
           />
         </div>
-        
+        <br />
         <div>
-          <UploadAndDisplayImage/>
+          <input
+          type="file"
+          name="myImage"
+          onChange={onChange}
+          />
         </div>
         
         <div className="form-group">
