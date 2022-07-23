@@ -18,10 +18,10 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
   useEffect(() => {
 
     if (check) {
-        console.log("Check True in FavoritesModule");
+        // console.log("Check True in FavoritesModule");
         setFlag(true);
       } else {
-        console.log("Check False in FavoritesModule");
+        // console.log("Check False in FavoritesModule");
         setFlag(false);
       }
 

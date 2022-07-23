@@ -4,11 +4,6 @@ import AuthRegisterForm from "./AuthRegisterForm";
 import { useHistory } from "react-router-dom";
 import Parse from "parse";
 
-
-
-
-
-
 // STATEFUL PARENT COMPONENT
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState({
@@ -23,7 +18,6 @@ const AuthRegister = () => {
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
 
-  
   // check = true if user is already logged in
   const check = !!(Parse.User.current() && Parse.User.current().authenticated);
   
@@ -65,7 +59,6 @@ const AuthRegister = () => {
     e.preventDefault();
     console.log("submitted: ", e.target);
     setAdd(true);
-    // history.push("/favorites");
   };
 
   return (
