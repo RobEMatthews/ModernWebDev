@@ -26,9 +26,9 @@ const FavoritesGood = () => {
             User: {username}{" "}
         </h1>
         <FavoritesForm/>
-        <button>
-            <Link to="/auth">Go back.</Link>
-        </button>
+        {/* <button>
+            <Link to="/auth" class="goBack">Go back</Link>
+        </button> */}
         </div>
     );
 };

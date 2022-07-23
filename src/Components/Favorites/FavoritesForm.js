@@ -1,6 +1,8 @@
 // PROTECTED ROUTE
 
 import React from "react";
+import UploadAndDisplayImage from "./ImageUpload"
+// import UploadImage from "./UploadingImage";
 
 import baseball_img from "../../images/baseball_image.jpg"; // you can import them
 import basketball_img from "../../images/basketball_image.jpg"; // you can import them
@@ -28,50 +30,50 @@ const FavoritesForm = () => {
     <label for="sport"><b class="question">Sport:</b></label>
     <input type="radio" name="sport" value="baseball" />
     <b class="option">Baseball</b>
-    <img
+    {/* <img
       src={baseball_img}
       alt="Baseball"
       width="100"
       height="100"
-    />
+    /> */}
 
     <input type="radio" name="sport" value="football" />
     <b class="option">Football</b>
-    <img
+    {/* <img
       src={football_img}
       alt="Football"
       width="100"
       height="100"
-    />
+    /> */}
     <input type="radio" name="sport" value="basketball" />
     <b class="option">Basketball</b>
-    <img
+    {/* <img
       src={basketball_img}
       alt="Basketball"
       width="100"
       height="100"
-    />
+    /> */}
     <input type="radio" name="sport" value="hockey" />
     <b class="option">Hockey</b>
-    <img
+    {/* <img
       src={hockey_img}
       alt="Hockey"
       width="100"
       height="100"
-    />
+    /> */}
     <input type="radio" name="sport" value="soccer" />
     <b class="option">Soccer</b>
-    <img
+    {/* <img
       src={soccer_img}
       alt="Soccer"
       width="100"
       height="100"
-    />
+    /> */}
 
     {/*Final option is 'other' for user to input their own sport*/}
     <input type="radio" name="sport" value="other" checked="checked" />
-    <b class="option">other</b>
-    <input type="text" placeholder="Enter Sport" name="sport" id="sport" />
+    <b class="option">Other </b>
+    <input type="text" placeholder="Enter sport" name="sport" id="sport" />
 
     <hr />
 
@@ -88,10 +90,10 @@ const FavoritesForm = () => {
 
     {/*Final option is 'other' for user to input their own level*/}
     <input type="radio" name="level" value="other" checked="checked" />
-    <b class="option">other</b>
+    <b class="option">Other </b>
     <input
       type="text"
-      placeholder="Enter Level"
+      placeholder="Enter level"
       name="otherLevel"
       id="otherLevel"
     />
@@ -99,16 +101,16 @@ const FavoritesForm = () => {
     <hr />
 
     {/*Date form type*/}
-    <label for="eventDate"><b class="question">Date:</b></label>
+    <label for="eventDate"><b class="question">Date: </b></label>
     <input type="date" name="date" />
 
     <hr />
 
     {/*text type for venue entry*/}
-    <label for="venue"><b class="question">Venue:</b></label>
+    <label for="venue"><b class="question">Venue: </b></label>
     <input
       type="text"
-      placeholder="Enter Venue"
+      placeholder="Enter venue"
       name="venue"
       id="venue"
       required
@@ -117,7 +119,7 @@ const FavoritesForm = () => {
     <hr />
 
     {/*text type for comment entry*/}
-    <label for="comment"><b class="question">Comments?</b></label>
+    <label for="comment"><b class="question">Comments? </b></label>
     <input
       type="text"
       placeholder="Enter comment"
@@ -189,6 +191,7 @@ const FavoritesForm = () => {
   width="100"
   height="100"
 />
+<UploadAndDisplayImage/>
 
 <h1 class="title">Basketball Events</h1>
 
@@ -198,6 +201,7 @@ const FavoritesForm = () => {
   width="100"
   height="100"
 />
+<UploadAndDisplayImage/>
 
 <h1 class="title">Football Events</h1>
 
@@ -208,15 +212,18 @@ const FavoritesForm = () => {
   height="100"
 />
 
+<UploadAndDisplayImage/>
 <h1 class="title">Hockey Events</h1>
 
 <img src={hockey_img} alt="Hockey" width="100" height="100" />
+<UploadAndDisplayImage/>
 
 <h1 class="title">Soccer Events</h1>
 
 <img src={soccer_img} alt="Soccer" width="100" height="100" />
-
-
+<UploadAndDisplayImage/>
+<h1 class="title">Other Events</h1>
+  <UploadAndDisplayImage/>
     </div>
   );
 };
