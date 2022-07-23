@@ -19,13 +19,49 @@ export const getEventbyUser = (userObject) => {
   });
 };
 
+export const getBaseballEvents = (userObject) => {
+  const Event = Parse.Object.extend("Event");
+  const query = new Parse.Query(Event);
+  query.equalTo("sport", "Baseball");
+  return query.find().then((results) => {
+    return results;
+  });
+};
 
+export const getBasketballEvents = (userObject) => {
+  const Event = Parse.Object.extend("Event");
+  const query = new Parse.Query(Event);
+  query.equalTo("sport", "Basketball");
+  return query.find().then((results) => {
+    return results;
+  });
+};
 
-export async function filterEventbySport (Event) {
-  console.log("Event: ", Event);
-  if(Event.sport === "Baseball") {
-    return true;
-  };
+export const getFootballEvents = (userObject) => {
+  const Event = Parse.Object.extend("Event");
+  const query = new Parse.Query(Event);
+  query.equalTo("sport", "Football");
+  return query.find().then((results) => {
+    return results;
+  });
+};
+
+export const getHockeyEvents = (userObject) => {
+  const Event = Parse.Object.extend("Event");
+  const query = new Parse.Query(Event);
+  query.equalTo("sport", "Hockey");
+  return query.find().then((results) => {
+    return results;
+  });
+};
+
+export const getSoccerEvents = (userObject) => {
+  const Event = Parse.Object.extend("Event");
+  const query = new Parse.Query(Event);
+  query.equalTo("sport", "Soccer");
+  return query.find().then((results) => {
+    return results;
+  });
 };
 
 // used to create a new event object assigned to a user

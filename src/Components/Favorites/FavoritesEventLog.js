@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Parse from "parse";
-import { getAllEvents, getEventbyUser, filterEventbySport } from "../../Common/Services/event.services.js";
-import { getAllUsers, getUserById } from "../../Common/Services/user.service.js";
+import { getEventbyUser, getBaseballEvents, getBasketballEvents, getFootballEvents, getHockeyEvents, getSoccerEvents } from "../../Common/Services/event.services.js";
+import { getAllUsers, } from "../../Common/Services/user.service.js";
  
 
 import baseball_img from "../../images/baseball_image.jpg"; 
@@ -19,6 +19,12 @@ const FavoritesEventLog = () => {
 
     // Variables in the state to hold data
     const [events, setEvent] = useState([]);
+    const [baseballEvents, setBaseballEvent] = useState([]);
+    const [basketballEvents, setBasketballEvent] = useState([]);
+    const [footballEvents, setFootballEvent] = useState([]);
+    const [hockeyEvents, setHockeyEvent] = useState([]);
+    const [soccerEvents, setSoccerEvent] = useState([]);
+    
     const [users, setUser] = useState([]);
   
     // UseEffect to run when the page loads to
@@ -33,9 +39,34 @@ const FavoritesEventLog = () => {
         console.log("users: ", users);
         setUser(users);
       });
-    }, [user]);
 
-    console.log("events: ", events);
+      getBaseballEvents(user).then((baseballEvents) => {
+        setBaseballEvent(baseballEvents);
+      });
+
+      getBasketballEvents(user).then((basketballEvents) => {
+        setBasketballEvent(basketballEvents);
+      });
+
+      getFootballEvents(user).then((footballEvents) => {
+        setFootballEvent(footballEvents);
+      });
+
+      getHockeyEvents(user).then((hockeyEvents) => {
+        setHockeyEvent(hockeyEvents);
+      });
+
+      getSoccerEvents(user).then((soccerEvents) => {
+        setSoccerEvent(soccerEvents);
+      });
+
+
+
+    }, []);
+    
+
+    // const baseballEvents = getBaseballEvents(user);
+    
     // const baseballEvents = events.filterEventbySport();
     // console.log("baseballEvents: ", baseballEvents);
 
@@ -68,27 +99,20 @@ const FavoritesEventLog = () => {
             alt="Baseball"
             width="100"
             height="100" 
-        />
-        {/* <div>
-        {userEvents.length > 0 && (
+        /> 
+        <div>
+        {baseballEvents.length > 0 && (
             <ul>
-            {userEvents.filter((event) => (
+            {baseballEvents.map((event) => (
                 <div>
                 <span>
-                    {/* Using getter for event Object to display name 
-                    <li key={event.objectId}>{event.get("name")}</li>{" "}
-                </span>
+                    {/* Using getter for event Object to display name */}
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
                 </div>
             ))}
             </ul>
         )}
-        </div> */}
-
-
-
-
-
-
+        </div> 
             
         <h1 class="title">Basketball Events</h1>
         <img
@@ -97,6 +121,19 @@ const FavoritesEventLog = () => {
             width="100"
             height="100" 
         />
+        <div>
+        {basketballEvents.length > 0 && (
+            <ul>
+            {basketballEvents.map((event) => (
+                <div>
+                <span>
+                    {/* Using getter for event Object to display name */}
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                </div>
+            ))}
+            </ul>
+        )}
+        </div> 
             
         <h1 class="title">Football Events</h1>
         <img
@@ -105,6 +142,20 @@ const FavoritesEventLog = () => {
             width="100"
             height="100" 
         />
+        <div>
+        {footballEvents.length > 0 && (
+            <ul>
+            {footballEvents.map((event) => (
+                <div>
+                <span>
+                    {/* Using getter for event Object to display name */}
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                </div>
+            ))}
+            </ul>
+        )}
+        </div> 
+
         
         <h1 class="title">Hockey Events</h1>
         <img 
@@ -113,6 +164,19 @@ const FavoritesEventLog = () => {
             width="100" 
             height="100" 
         />
+                <div>
+        {hockeyEvents.length > 0 && (
+            <ul>
+            {hockeyEvents.map((event) => (
+                <div>
+                <span>
+                    {/* Using getter for event Object to display name */}
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                </div>
+            ))}
+            </ul>
+        )}
+        </div> 
         
         <h1 class="title">Soccer Events</h1>
         <img 
@@ -121,6 +185,19 @@ const FavoritesEventLog = () => {
             width="100" 
             height="100" 
         />
+        <div>
+        {soccerEvents.length > 0 && (
+            <ul>
+            {soccerEvents.map((event) => (
+                <div>
+                <span>
+                    {/* Using getter for event Object to display name */}
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                </div>
+            ))}
+            </ul>
+        )}
+        </div> 
         </>
     );
 };
