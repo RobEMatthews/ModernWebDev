@@ -5,7 +5,6 @@ import Parse from "parse";
 import { getEventbyUser, getBaseballEvents, getBasketballEvents, getFootballEvents, getHockeyEvents, getSoccerEvents, getAllEvents } from "../../Common/Services/event.services.js";
 import { getAllUsers, getTopUsers } from "../../Common/Services/user.service.js";
  
-
 import baseball_img from "../../images/baseball_image.jpg"; 
 import basketball_img from "../../images/basketball_image.jpg"; 
 import football_img from "../../images/football_image.jpg"; 

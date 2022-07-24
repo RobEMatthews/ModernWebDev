@@ -1,14 +1,6 @@
 // PROTECTED ROUTE
 
 import React from "react";
-// import UploadImage from "./UploadingImage";
-
-// import baseball_img from "../../images/baseball_image.jpg"; 
-// import basketball_img from "../../images/basketball_image.jpg"; 
-// import football_img from "../../images/football_image.jpg"; 
-// import soccer_img from "../../images/soccer_image.jpg"; 
-// import hockey_img from "../../images/hockey_image.jpg"; 
-
 
 /* Favorites MODULE */
 const FavoritesForm = ({ event, user, onChange, onSubmit }) => {
@@ -116,4 +108,3 @@ const FavoritesForm = ({ event, user, onChange, onSubmit }) => {
 };
 
 export default FavoritesForm;
-

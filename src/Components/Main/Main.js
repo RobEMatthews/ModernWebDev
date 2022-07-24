@@ -2,7 +2,7 @@ import React from "react";
 import DisplayData from "./DisplayData.js";
 import DisplayFavorites from "../Favorites/DisplayFavorites.js";
 
-/* MAIN PARENT COMPONENT */
+/* MAIN COMPONENT */
 const MainModule = () => {
   return (
     <div>
