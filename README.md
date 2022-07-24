@@ -1,5 +1,7 @@
 # TEAM: Robbie Matthews, Sam Sikkink
 
+## The SportEventTracker allows for seamless recording of one's memorable moments.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

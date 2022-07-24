@@ -92,14 +92,15 @@ const FavoritesEventLog = () => {
         </div>
 
         {/*begin use of the grid layout*/}
-        
-        <h1 class="title">Baseball Events</h1>   
+        <div>
+        <h1 class="title">Baseball Events </h1>  
         <img
             src={baseball_img}
             alt="Baseball"
             width="100"
             height="100" 
         /> 
+        </div>
         <div>
         {baseballEvents.length > 0 && (
             <ul>
@@ -107,9 +108,11 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                
+                </span>
                 </div>
-            ))}
+            )
+            )}
             </ul>
         )}
         </div> 
@@ -128,7 +131,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>
@@ -149,7 +152,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>
@@ -171,7 +174,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>
@@ -192,7 +195,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}"</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>

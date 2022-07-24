@@ -10,4 +10,7 @@ All notable changes to this project will be documented in this file.
 - Feature 4
 
 ## [0.3.0] - 07-08-2022
-- Feature 4
+- Feature 5
+
+## [0.4.0] - 23-07-2022
+- Feature 6

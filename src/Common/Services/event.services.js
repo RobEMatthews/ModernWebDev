@@ -1,5 +1,6 @@
 import Parse from "parse";
 
+// getAllEvents
 export const getAllEvents = () => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
@@ -9,6 +10,7 @@ export const getAllEvents = () => {
   });
 };
 
+// getEventbyUser
 export const getEventbyUser = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
@@ -19,6 +21,7 @@ export const getEventbyUser = (userObject) => {
   });
 };
 
+// getBaseballEvents
 export const getBaseballEvents = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
@@ -28,6 +31,7 @@ export const getBaseballEvents = (userObject) => {
   });
 };
 
+//getBasketballEvents
 export const getBasketballEvents = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
@@ -37,6 +41,7 @@ export const getBasketballEvents = (userObject) => {
   });
 };
 
+// getFootballEvents
 export const getFootballEvents = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
@@ -46,6 +51,7 @@ export const getFootballEvents = (userObject) => {
   });
 };
 
+// getHockeyEvents
 export const getHockeyEvents = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
@@ -55,6 +61,7 @@ export const getHockeyEvents = (userObject) => {
   });
 };
 
+// getSoccerEvents
 export const getSoccerEvents = (userObject) => {
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
