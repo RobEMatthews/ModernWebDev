@@ -31,40 +31,56 @@ const FavoritesEventLog = () => {
     useEffect(() => {
         getEventbyUser(user).then((userEvents) => {
             setUserEvent(userEvents);
+        }).catch(e => {
+            console.log(e);
         });
     
         getAllUsers().then((users) => {
             setUser(users);
+        }).catch(e => {
+            console.log(e);
         });
         
         getAllEvents().then((events) => {
             setEvents(events);
+        }).catch(e => {
+            console.log(e);
         });
         
         // next 20 lines sort events by sport
         getBaseballEvents(user).then((baseballEvents) => {
             setBaseballEvent(baseballEvents);
+        }).catch(e => {
+            console.log(e);
         });
         
         getBasketballEvents(user).then((basketballEvents) => {
             setBasketballEvent(basketballEvents);
+        }).catch(e => {
+            console.log(e);
         });
         
         getFootballEvents(user).then((footballEvents) => {
             setFootballEvent(footballEvents);
+        }).catch(e => {
+            console.log(e);
         });
         
         getHockeyEvents(user).then((hockeyEvents) => {
             setHockeyEvent(hockeyEvents);
+        }).catch(e => {
+            console.log(e);
         });
         
         getSoccerEvents(user).then((soccerEvents) => {
             setSoccerEvent(soccerEvents);
+        }).catch(e => {
+            console.log(e);
         });
-    }, [user, users]);
+    }, [user]);
     
-    const top3 = getTopUsers(users);
-    console.log("top3: ", top3);
+    // const top3 = getTopUsers(users);
+    // console.log("top3: ", top3);
     
     const { username } = Parse.User.current().attributes;
     // console.log("userEvents", userEvents);
@@ -105,7 +121,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100" alt="not found"/>}</li>{" "}                
                 </span>
                 </div>
             )
@@ -128,7 +144,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100" alt="not found"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>
@@ -149,7 +165,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100" alt="not found"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>
@@ -171,7 +187,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100" alt="not found"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>
@@ -192,7 +208,7 @@ const FavoritesEventLog = () => {
                 <div>
                 <span>
                     {/* Using getter for event Object to display name */}
-                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100"/>}</li>{" "}                </span>
+                    <li key={event.objectId}>{event.get("date")} | {event.get("venue")} | "{event.get("comment")}" | <br/> {<img src={event.get("eventImage").url()} width="100" height="100" alt="not found"/>}</li>{" "}                </span>
                 </div>
             ))}
             </ul>
