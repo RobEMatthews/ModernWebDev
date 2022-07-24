@@ -1,4 +1,5 @@
 // PROTECTED ROUTE
+// This form allows users to record new events and store in the parse database
 
 import React from "react";
 

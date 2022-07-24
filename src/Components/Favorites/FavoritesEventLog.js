@@ -78,6 +78,11 @@ const FavoritesEventLog = () => {
         });
     }, [user]);
     
+
+    // uncommenting the following lines triggers the user service 
+    // that crashes the app. The same happens when trying to include
+    // it in the useEffect promise chain above.
+
     // const top3 = getTopUsers(users);
     // console.log("top3: ", top3);
     
@@ -103,7 +108,7 @@ const FavoritesEventLog = () => {
             )}
         </div>
 
-        {/*begin use of the grid layout*/}
+        {/*Display data based on sport*/}
         <div>
         <h1 class="title">Baseball Events </h1>  
         <img

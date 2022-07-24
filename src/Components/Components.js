@@ -1,3 +1,5 @@
+// handles routing and authentication
+
 import React from "react";
 import {
   BrowserRouter as Router,

@@ -1,3 +1,5 @@
+// This form creates a new User object in the Parse database
+
 import React from "react";
 import { Link } from "react-router-dom";
 

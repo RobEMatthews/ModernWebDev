@@ -2,6 +2,16 @@
 
 ## The SportEventTracker allows for seamless recording of one's memorable moments.
 
+
+Hi Professor, the website functionality works about 99% as intended.
+However, when adding the getTopUsers function located in the 
+userservice.js file, the data somehow stops loading asynchronously.
+Everything else in the user stories works, unless I add that function.
+The function seems to be POSTing continuously when I include it in the 
+UseState React Hook. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

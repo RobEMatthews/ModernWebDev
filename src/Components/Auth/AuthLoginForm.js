@@ -1,3 +1,5 @@
+// This form allows a user to login to an existing account
+
 import React from "react";
 
 // STATELESS CHILD COMPONENT

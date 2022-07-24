@@ -21,6 +21,11 @@ export const getAllUsers = () => {
   });
 };
 
+
+// gets the top three users by event total. 
+
+// This is the function that crashes the app
+
 export const getTopUsers = (users) => {
   let eventsAttended = Array(users.length);
   let top3 = Array(3);

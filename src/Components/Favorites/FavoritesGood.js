@@ -9,7 +9,7 @@ import { createEvent } from "../../Common/Services/event.services";
 const FavoritesGood = () => {
 
     const history = useHistory();
-    
+    // checks authentication
     const check = !!(Parse.User.current() && Parse.User.current().authenticated);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const FavoritesGood = () => {
       
     const { username } = Parse.User.current().attributes;
 
-
+    // blank event
     const [newEvent, setNewEvent] = useState({
         sport: "",
         level: "",
