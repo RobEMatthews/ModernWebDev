@@ -12,6 +12,7 @@ export const getAllEvents = () => {
 
 // getEventbyUser
 export const getEventbyUser = (userObject) => {
+  // console.log("userObject", userObject);
   const Event = Parse.Object.extend("Event");
   const query = new Parse.Query(Event);
   query.equalTo("user", userObject);

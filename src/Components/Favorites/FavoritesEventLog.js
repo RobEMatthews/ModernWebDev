@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Parse from "parse";
-import { getEventbyUser, getBaseballEvents, getBasketballEvents, getFootballEvents, getHockeyEvents, getSoccerEvents } from "../../Common/Services/event.services.js";
-import { getAllUsers, } from "../../Common/Services/user.service.js";
+import { getEventbyUser, getBaseballEvents, getBasketballEvents, getFootballEvents, getHockeyEvents, getSoccerEvents, getAllEvents } from "../../Common/Services/event.services.js";
+import { getAllUsers, getTopUsers } from "../../Common/Services/user.service.js";
  
 
 import baseball_img from "../../images/baseball_image.jpg"; 
@@ -15,71 +15,68 @@ import hockey_img from "../../images/hockey_image.jpg";
 const FavoritesEventLog = () => {
 
     const user = Parse.User.current();
-    //console.log("user: ", user);
 
     // Variables in the state to hold data
-    const [events, setEvent] = useState([]);
+    const [users, setUser] = useState([]);
+    const [events, setEvents] = useState([]);
+    const [userEvents, setUserEvent] = useState([]);
     const [baseballEvents, setBaseballEvent] = useState([]);
     const [basketballEvents, setBasketballEvent] = useState([]);
     const [footballEvents, setFootballEvent] = useState([]);
     const [hockeyEvents, setHockeyEvent] = useState([]);
-    const [soccerEvents, setSoccerEvent] = useState([]);
-    
-    const [users, setUser] = useState([]);
+    const [soccerEvents, setSoccerEvent] = useState([])
   
     // UseEffect to run when the page loads to
     // obtain async data and render
     useEffect(() => {
-      getEventbyUser(user).then((events) => {
-        console.log("events", events);
-        setEvent(events);
-      });
-  
-      getAllUsers().then((users) => {
-        console.log("users: ", users);
-        setUser(users);
-      });
-
-      getBaseballEvents(user).then((baseballEvents) => {
-        setBaseballEvent(baseballEvents);
-      });
-
-      getBasketballEvents(user).then((basketballEvents) => {
-        setBasketballEvent(basketballEvents);
-      });
-
-      getFootballEvents(user).then((footballEvents) => {
-        setFootballEvent(footballEvents);
-      });
-
-      getHockeyEvents(user).then((hockeyEvents) => {
-        setHockeyEvent(hockeyEvents);
-      });
-
-      getSoccerEvents(user).then((soccerEvents) => {
-        setSoccerEvent(soccerEvents);
-      });
-
-
-
-    }, []);
+        getEventbyUser(user).then((userEvents) => {
+            setUserEvent(userEvents);
+        });
     
-
-    // const baseballEvents = getBaseballEvents(user);
+        getAllUsers().then((users) => {
+            setUser(users);
+        });
+        
+        getAllEvents().then((events) => {
+            setEvents(events);
+        });
+        
+        // next 20 lines sort events by sport
+        getBaseballEvents(user).then((baseballEvents) => {
+            setBaseballEvent(baseballEvents);
+        });
+        
+        getBasketballEvents(user).then((basketballEvents) => {
+            setBasketballEvent(basketballEvents);
+        });
+        
+        getFootballEvents(user).then((footballEvents) => {
+            setFootballEvent(footballEvents);
+        });
+        
+        getHockeyEvents(user).then((hockeyEvents) => {
+            setHockeyEvent(hockeyEvents);
+        });
+        
+        getSoccerEvents(user).then((soccerEvents) => {
+            setSoccerEvent(soccerEvents);
+        });
+    }, [user, users]);
     
-    // const baseballEvents = events.filterEventbySport();
-    // console.log("baseballEvents: ", baseballEvents);
-
+    const top3 = getTopUsers(users);
+    console.log("top3: ", top3);
+    
     const { username } = Parse.User.current().attributes;
+    // console.log("userEvents", userEvents);
 
     return(
         <><h1>Event Log for: {username}{" "}</h1>
 
 
         <div>
-            {events.length > 0 && (
+            {userEvents.length > 0 && (
                 <ul>
-                {events.map((event) => (
+                {userEvents.map((event) => (
                     <div>
                     <span>
                         {/* Using getter for event Object to display name */}
